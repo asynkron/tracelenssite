@@ -4,33 +4,69 @@ date: 2020-04-28T08:34:24+02:00
 draft: false
 tags: []
 ---
-
-<section class="p-0 border-top border-bottom bg-light row no-gutters">
-  <div class="col-lg-5 col-xl-6 order-lg-2">
-    <div class="divider divider-side transform-flip-y bg-light d-none d-lg-block"></div>
-    <img class="flex-fill" src="/assets/img/asynkron/cpu43.png" alt="compute power">
-  </div>
-  <div class="col-lg-7 col-xl-6">
-    <div class="container min-vh-lg-70 min-vh-xl-80 d-flex align-items-center">
-      <div class="row justify-content-center">
-        <div class="col col-md-10 col-xl-9 py-4 py-sm-5">
-          <div class="my-4 my-md-5 my-lg-0 my-xl-5">
-
-            <h1 class="display-4 mt-4 mt-lg-5">
-              Our Expertise
-            </h1>
-            <h2 class="" style="font-weight:normal">
-              We specialize in real-time and high-volume transactional systems, providing development and architecture
-              services focused on scalability, performance and cloud computing.
-            </h2>
-          </div>
+<section class="bg-white">
+  <div class="container py-2">
+    <div class="row align-items-center justify-content-around">
+      <div class="col-md-12 col-lg-12 ">
+        <div class="text-center text-lg-left">
+          <h1>TraceLens the OpenTelemetry UI</h1>
+          <p>
+            TraceLens is an OpenTelemetry logging, tracing and metrics visualizer that focuses on providing
+            <b>developers</b>
+            with <b>relevant data</b>, rather than overwhelming them with a large quantity of information. It also acts
+            as an OpenTelemetry Collector for ingesting and storing data.
+          </p>
+          <h2>Getting Started</h2>
+          <h3>Setting Up Docker Compose</h3>
+          <p>
+            Begin by <a href="https://raw.githubusercontent.com/asynkron/TraceLens/main/docker-compose.yml">downloading
+              the Docker Compose file</a>. This file contains all the necessary configurations to run the essential
+            components for TraceLens.
+          </p>
+          <p>
+            Once downloaded, executing this Docker Compose file will establish a local environment comprising a Postgres
+            database instance for data storage, a Redis instance for caching, and the TraceLens UI, which will be
+            accessible on your local machine via port 5001.
+          </p>
+          <h3>Integrating Microsoft Aspire with TraceLens</h3>
+          <p>
+            Enhance your project's capabilities by installing the TraceLens Aspire library. Start by <a
+              href="https://www.nuget.org/packages/TraceLens.Aspire">installing the Nuget package
+              "TraceLens.Aspire"</a>. This package provides essential functionalities to integrate TraceLens with your
+            Microsoft Aspire applications.
+          </p>
+          <p>
+            To incorporate TraceLens into your .NET application, modify the program.cs file of your Aspire AppHost
+            configuration as follows:
+          <pre><code class="lang-cs">using TraceLens.Aspire;</code></pre>
+          This using directive adds the necessary TraceLens namespaces to your project.
+          <pre><code class="lang-cs">builder.AddTraceLens();</code></pre>
+          This line of code configures your application builder to include TraceLens, enabling telemetry and tracing
+          features.
+          </p>
+          <h3>Sending Telemetry Data</h3>
+          <p>
+            TraceLens is equipped with an OpenTelemetry collector that operates at <a
+              href="http://localhost:4317">http://localhost:4317</a>. This collector is designed to handle telemetry
+            data using the OpenTelemetry V1 protobuf contracts through gRPC, facilitating efficient data collection and
+            monitoring. This setup is crucial for gathering insights and improving application performance through
+            detailed telemetry.
+          </p>
+          <h3>Terms of Use</h3>
+          <p>
+            During beta, TraceLens is free to use for everyone.<br>
+            <br>
+            After beta, TraceLens will be free for personal use and OSS projects. A subscription model will be available
+            for commercial use after beta. details are undecided yet.
+          </p>
         </div>
       </div>
     </div>
   </div>
+
 </section>
 
-<section class="pb-0 bg-white">
+<section class="py-0 bg-light">
 
   <div class="container py-4">
     <div class="row align-items-center justify-content-around">
